@@ -1,5 +1,6 @@
 import React from "react";
 import logo from '../assets/images/dsalogo_00.png';
+import { CartWidget } from "./CartWidget";
 
 const NavBar = () => {
     return (
@@ -16,6 +17,7 @@ const NavBar = () => {
                         <li class="nav-item"><a class="nav-link" href="./pages/contacto.html">Contacto</a></li>
                     </ul>
                 </div>
+                <CartWidget />
             </div>
         </nav>
     )
