@@ -1,11 +1,10 @@
 import React from "react";
-import ItemCount from './ItemCount';
+import ItemCount  from './ItemCount';
 
     const ItemListContainer = ({ cheers }) => {
 
-    const onAdd = () => {
-        alert(`Gracias por tu compra`)
-    }
+        const onAdd = () => {
+        }
 
 
     return(
@@ -18,7 +17,7 @@ import ItemCount from './ItemCount';
         </div>
     </div>
         <div class="text-center">
-            <h1>{cheers}Producto</h1>
+            <h1>Producto</h1>
             <ItemCount stock={5} onAdd={onAdd} />
         </div>
     </>

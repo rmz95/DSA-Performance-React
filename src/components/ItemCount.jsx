@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const ItemCount = ({ stock, initial = 0, onAdd }) => {
+const ItemCount = ({ stock, initial = 1 }) => {
+
     const [contador, setContador] = useState(initial)
 
     const suma = () => {
@@ -12,6 +13,10 @@ const ItemCount = ({ stock, initial = 0, onAdd }) => {
         setContador(Math.max(contador - 1, 0))
     }
 
+    const onAdd = () => {
+        contador >= 1 && alert(`Gracias por tu compra de ${contador}`)
+        contador <= 0 && alert('No es posible la compra, debe asignar una unidad') 
+    }
 
 return (
     <>
