@@ -1,5 +1,5 @@
 export const InitialProducts = [
-    
+
         {   id: 1, type: "Producto", stock: 10,url:"https://cdn-icons-png.flaticon.com/64/887/887198.png",  name: "Regulables", price: 37000},
         {   id: 2, type: "Producto", stock: 20,url:"https://cdn-icons-png.flaticon.com/64/887/887198.png",  name: "Progresivos", price: 25000},
         {   id: 3, type: "Producto", stock: 5, url:"https://cdn-icons-png.flaticon.com/64/887/887198.png", name: "1/4 de Milla", price: 30000},
@@ -12,5 +12,4 @@ export const InitialProducts = [
         {   id: 10, type: "Servicio", stock: 1, url: "https://cdn-icons-png.flaticon.com/64/2052/2052442.png", name: "Tratamiento de Acrilicos", price: 5000},
         {   id: 11, type: "Servicio", stock: 1, url: "https://cdn-icons-png.flaticon.com/64/2052/2052442.png", name: "Tratamiento de Espirales y Amortiguadores", price: 7000},
         {   id: 12, type: "Servicio", stock: 1, url: "https://cdn-icons-png.flaticon.com/64/2052/2052442.png", name: "Tratamiento de Ceramicos", price: 8500}
-    
 ]

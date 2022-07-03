@@ -27,7 +27,6 @@ const ItemListContainer = ({ greeting }) => {
                     });
             }, []);
 
-
     return(
         <>
         <div class="row gx-4 gx-lg-5 justify-content-center ms-0">
