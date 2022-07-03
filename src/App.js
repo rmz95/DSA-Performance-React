@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import './styles.css';
 import Navbar from "./components/NavBar";
-// import Main from "./components/Main";
 import ItemListContainer  from './components/ItemListContainer';
 
 const App = () => {
@@ -10,8 +9,10 @@ const App = () => {
     <>
     <Navbar>
     </Navbar>
+    <main>
     <ItemListContainer>
     </ItemListContainer>
+    </main>
     </>
   );
 }
