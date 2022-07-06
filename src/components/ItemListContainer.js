@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import  ItemList from './ItemList';
-import { InitialProducts } from "../mock/InitialProducts.js";
+import { InitialProducts } from "../mock/InitialProducts";
+import { useParams } from "react-router-dom";
 import  BarLoader  from "react-spinners/BarLoader";
 
     const promise = new Promise ((res, rej) => {
@@ -14,8 +15,11 @@ const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const { id } = useParams();
+
             useEffect(() => {
-                promise
+                const getitems = () => {
+                    promise
                     .then((products) => {
                         setProducts(products);
                     })
@@ -25,7 +29,9 @@ const ItemListContainer = ({ greeting }) => {
                     .finally(() => {
                         setLoading(false);
                     });
-            }, []);
+            };
+            getitems();
+        }, [id]);
 
     return(
         <>
