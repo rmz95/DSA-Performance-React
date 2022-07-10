@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import  ItemList from './ItemList';
-import { InitialProducts } from "../mock/InitialProducts";
+import { InitialProducts } from "../data/InitialProducts";
 import { useParams } from "react-router-dom";
 import  BarLoader  from "react-spinners/BarLoader";
 

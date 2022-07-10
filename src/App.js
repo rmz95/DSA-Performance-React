@@ -10,7 +10,6 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import Item from './components/Item';
 
 const App = () => {
 
@@ -20,8 +19,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<ItemListContainer/>}/>
         <Route path="/categories/:categoria:type" element={<ItemListContainer/>} />
-        <Route path="/product/:id" element={<ItemDetailContainer/>}/>
-        <Route path="/cart" element={<Cart />}/>
+        <Route path="/categories/:categoria:type/:id" element={<ItemDetailContainer/>}/>
+        <Route path="/Cart" element={<Cart />}/>
       </Routes>
     </Navbar>
     </BrowserRouter>

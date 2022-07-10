@@ -2,6 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { ItemDetail } from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import { BarLoader } from 'react-spinners';
+import { InitialProducts } from '../../data/InitialProducts';
+
+const promise = new Promise ((res, rej) => {
+    setTimeout(() => {
+        res(InitialProducts);
+    }, 2000);
+});
 
     const ItemDetailContainer = ({ greeting }) => {
     const [product, setProducts] = useState({});
@@ -11,21 +18,14 @@ import { BarLoader } from 'react-spinners';
     const { id } = useParams();
 
     useEffect(() => {
-
-        const getitems = async () => {
-            try {
-                setProducts();
-            }
-            catch {
-                setError(true);
-            }
-            finally {
-                setLoading(false);
-            };
-        };
-    getitems();
-}, [id]);
-
+        fetch('../../data/InitialProducts.js')
+            promise
+            .then(res=>res.json())
+            .then(data=>setProducts(data))
+            .catch(err=>console.log(err))
+            .finally(()=>setLoading(false))
+    }, [id]);
+    
     return(
         <>
         {loading ? (

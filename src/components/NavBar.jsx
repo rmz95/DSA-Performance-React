@@ -6,8 +6,8 @@ import { Link, NavLink } from 'react-router-dom';
 const NavBar = () => {
 
     const categoria = [
-        {name: "Productos", route:"categories/Productos", type:"Productos"},
-        {name: "Servicios", route:"categories/Servicios", type:"Servicios"}
+        {name: "Productos", route:"categories/Productos", type:"Producto"},
+        {name: "Servicios", route:"categories/Servicios", type:"Servicio"}
     ];
     
     return (
