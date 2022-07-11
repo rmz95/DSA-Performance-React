@@ -6,8 +6,8 @@ import { Link, NavLink } from 'react-router-dom';
 const NavBar = () => {
 
     const categoria = [
-        {name: "Productos", route:"categories/productos", id:"Producto"},
-        {name: "Servicios", route:"categories/servicios", id:"Servicio"}
+        {name: "Productos", route:"/categories/Producto", id:"Producto"},
+        {name: "Servicios", route:"/categories/Servicio", id:"Servicio"}
     ];
     
     return (
@@ -17,7 +17,7 @@ const NavBar = () => {
                 {/* <button class="navbar-toggler ms-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button> */}
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 pb-3 mb-lg-0">
-                            {categoria.map((categories) => (<NavLink key={categories.id} to={`/${categories.route}`} className="nav-item nav-link">{categories.name}</NavLink>))}
+                            {categoria.map((categories) => (<NavLink key={categories.id} to={categories.route} className="nav-item nav-link">{categories.name}</NavLink>))}
                     </ul>
                 </div>
                 <NavLink to="/Cart">

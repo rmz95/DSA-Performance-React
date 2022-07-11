@@ -15,23 +15,24 @@ const ItemListContainer = ({ greeting }) => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const { id } = useParams();
+    const { type } = useParams();
 
-            useEffect(() => {
-                const getitems = () => {
-                    promise
-                    .then((products) => {
-                        setProducts(products);
-                    })
-                    .catch((error) => {
-                        console.error("error: ", error);
-                    })
-                    .finally(() => {
-                        setLoading(false);
-                    });
+        useEffect(() => {
+            const getitems = () => {
+                promise
+                .then((products) => {
+                    const getProducts = products.filter(x => x.type === type)
+                    type ? setProducts(getProducts) : setProducts(products)
+                })
+                .catch((error) => {
+                    console.error("error: ", error);
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
             };
             getitems();
-        }, [id]);
+        },[type]);
 
     return(
         <>
