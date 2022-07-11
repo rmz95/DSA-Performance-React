@@ -16,6 +16,7 @@ const ItemListContainer = ({ greeting }) => {
     const [loading, setLoading] = useState(true);
 
     const { type } = useParams();
+    console.log(type)
 
         useEffect(() => {
             const getitems = () => {
