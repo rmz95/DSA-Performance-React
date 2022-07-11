@@ -11,10 +11,12 @@ const onAdd = (contador) => {
 };
 
 return (
-    <div>
-        <img src={product.image} alt={product.name} />
+    <div className="row gx-4 gx-lg-5 justify-content-center ms-0">
+    <div className="col-lg-8 col-xl-6 text-center pt-4">
+        <img src={product.url} alt={product.name} />
         <h1>{product.name}</h1>
-        <span>${product.price}</span>
+        <img src={product.url2} alt={product.name} className="img-fluid img-thumbnail"/>
+        <span className="fs-4 bold">${product.price}</span>
         <p>{product.description}</p>
         {!finalized ? (
         <ItemCount onAdd={onAdd} stock={product.stock} initial={1} />
@@ -24,7 +26,6 @@ return (
         </Link>
     )}
     </div>
+    </div>
     );
 };
-
-
