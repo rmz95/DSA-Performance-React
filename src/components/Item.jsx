@@ -1,7 +1,4 @@
 import React from 'react';
-import ItemCount from './ItemCount';
-import { ItemDetail } from './ItemDetail/ItemDetail';
-import ItemListContainer from './ItemListContainer';
 import { Link } from 'react-router-dom';
 
 const Item = ({  product }) => {
@@ -18,7 +15,6 @@ const Item = ({  product }) => {
                 </div>
                 <Link onClick={product.id} to={`/categories/${product.type}/${product.id}`}><button class="btn btn-dark mx-5">Ver detalles del {product.type}</button></Link>
                 <p class="my-1">Stock disponible : {product.stock}</p>
-                <ItemCount  stock={product.stock} />
             </div>
         </div>
     );

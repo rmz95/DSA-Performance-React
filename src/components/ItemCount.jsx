@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ItemCount = ({ stock, initial = 1 }) => {
+const ItemCount = ({ stock, initial = 1, onAdd }) => {
 
     const [contador, setContador] = useState(initial)
 
@@ -13,9 +13,8 @@ const ItemCount = ({ stock, initial = 1 }) => {
         setContador(Math.max(contador - 1, 0))
     }
 
-    const onAdd = () => {
-        contador >= 1 && alert(`Gracias por tu compra de ${contador}`)
-        contador <= 0 && alert('No es posible la compra, debe asignar una unidad') 
+    const agregado = () => {
+        if(contador > 0) onAdd(contador);
     }
 
 return (
@@ -24,7 +23,7 @@ return (
             <button class="btn btn-outline-secondary" onClick={resta}>-</button>
             <span class="mx-2 fs-5">{contador}</span>
             <button class="btn btn-outline-secondary" onClick={suma}>+</button>
-            <button class="btn btn-primary mx-2" onClick={onAdd}>Comprar</button>
+            <button class="btn btn-primary mx-2" onClick={agregado}>Agregar al Carrito</button>
         </div>
     </>
 )}

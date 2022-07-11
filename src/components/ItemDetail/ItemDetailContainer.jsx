@@ -10,21 +10,24 @@ const promise = new Promise ((res, rej) => {
     }, 2000);
 });
 
-    const ItemDetailContainer = ({ greeting }) => {
-    const [product, setProducts] = useState({});
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
 
-    const { id } = useParams();
+const ItemDetailContainer = ({ greeting }) => {
+const [product, setProduct] = useState([]);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(false);
+
+const { id } = useParams();
 
     useEffect(() => {
-        fetch('../../data/InitialProducts.js')
-            promise
-            .then(res=>res.json())
-            .then(data=>setProducts(data))
-            .catch(err=>console.log(err))
-            .finally(()=>setLoading(false))
+        promise.then((data) => {
+            const getData = data[id]
+            setProduct(getData)
+            setLoading(false)
+        }).catch(() => {
+            console.log('error')
+        })
     }, [id]);
+    console.log(product)
     
     return(
         <>
