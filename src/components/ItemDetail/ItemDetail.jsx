@@ -22,7 +22,7 @@ return (
         <ItemCount onAdd={onAdd} stock={product.stock} initial={1} />
     ) : (
         <Link to="/cart">
-            <button>Finalizar compra</button>
+            <button className="btn btn-secondary">Finalizar compra</button>
         </Link>
     )}
     </div>
