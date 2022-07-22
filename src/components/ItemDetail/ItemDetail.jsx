@@ -24,9 +24,16 @@ return (
         {!finalized ? (
         <ItemCount onAdd={onAdd} stock={product.stock} initial={1} />
     ) : (
-        <Link to="/cart">
-            <button className="btn btn-secondary">Finalizar compra</button>
-        </Link>
+        <>
+            <div className="d-grid gap-2 d-md-flex justify-content-md-center">
+                <Link to="/cart" className="">
+                    <button className="btn btn-success">Finalizar compra</button>
+                </Link>
+                <Link to="/" className="">
+                    <button className="btn btn-dark">Seguir comprando</button>
+                </Link>
+            </div>
+        </>
     )}
     </div>
     </div>
