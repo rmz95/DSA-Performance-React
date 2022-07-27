@@ -19,7 +19,6 @@ const Item = ({  product }) => {
                     </div>
                 </div>
                 <div className="card-footer bg-transparent border-dark">
-                {/* <Link onClick={product.id} to={`/categories/${product.type}/${product.id}`} className="d-block"><button className="btn btn-dark mx-5">Ver detalles del {product.type}</button></Link> */}
                 <p className="my-1">Stock disponible : {product.stock}</p>
                 </div>
             </div>

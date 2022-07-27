@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import  ItemList from './ItemList';
-// import { InitialProducts } from "../data/InitialProducts";
 import { useParams } from "react-router-dom";
 import  BarLoader  from "react-spinners/BarLoader";
 import { db } from "../firebase/firebase";
-
-    // const promise = new Promise ((res, rej) => {
-    //     setTimeout(() => {
-    //         res(InitialProducts);
-    //     }, 2000);
-    // });
 
 
 const ItemListContainer = ({ greeting }) => {
@@ -38,21 +31,6 @@ const ItemListContainer = ({ greeting }) => {
             })
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
-
-            // const getitems = () => {
-            //     promise
-            //     .then((products) => {
-            //         const getProducts = products.filter(x => x.type === type)
-            //         type ? setProducts(getProducts) : setProducts(products)
-            //     })
-            //     .catch((error) => {
-            //         console.error("error: ", error);
-            //     })
-            //     .finally(() => {
-            //         setLoading(false);
-            //     });
-            // };
-            // getitems();
         },[type]);
 
     return(

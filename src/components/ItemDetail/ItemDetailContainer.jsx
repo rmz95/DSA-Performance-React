@@ -2,15 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { ItemDetail } from './ItemDetail';
 import { useParams } from 'react-router-dom';
 import { BarLoader } from 'react-spinners';
-// import { InitialProducts } from '../../data/InitialProducts';
 import { db } from "../../firebase/firebase";
 import { doc, getDoc, collection } from "firebase/firestore";
 
-// const promise = new Promise ((res, rej) => {
-//     setTimeout(() => {
-//         res(InitialProducts);
-//     }, 2000);
-// });
 
 
 const ItemDetailContainer = ({ greeting }) => {
@@ -31,17 +25,7 @@ const { id } = useParams();
         })
     })
     .catch(err => console.log(err))
-    .finally(() => setLoading(false)) 
-
-
-
-        // promise.then((data) => {
-        //     const getData = data[id]
-        //     setProduct(getData)
-        //     setLoading(false)
-        // }).catch(() => {
-        //     console.log('error')
-        // })
+    .finally(() => setLoading(false))
     }, [id]);
     console.log(product)
     
