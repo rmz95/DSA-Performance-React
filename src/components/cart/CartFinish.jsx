@@ -28,12 +28,17 @@ import { cartContext } from "../context/CartContext";
                 items: products,
                 date: serverTimestamp(),
                 cantidad: qtyProducts,
+                total: total,
             })
             .then((result) => {
                 setidVenta(result.id)
             })
         }
-    
+        
+        let total = 0;
+        for(let i = 0; i < products.length; i++){
+            total += products[i].price * products[i].qty;
+        } 
 
         return (
             <>
