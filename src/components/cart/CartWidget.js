@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { red } from '@mui/material/colors';
-import { cartContext } from './context/CartContext';
+import { cartContext } from '../context/CartContext';
 
 
     const CartWidget = () => {

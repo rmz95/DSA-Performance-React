@@ -3,7 +3,7 @@ import { getDocs, collection, query, where } from "firebase/firestore";
 import  ItemList from './ItemList';
 import { useParams } from "react-router-dom";
 import  BarLoader  from "react-spinners/BarLoader";
-import { db } from "../firebase/firebase";
+import { db } from "../../firebase/firebase";
 
 
 const ItemListContainer = ({ greeting }) => {

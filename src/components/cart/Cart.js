@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from 'react-router-dom';
 import ItemCart from "./ItemCart";
-import { cartContext } from "./context/CartContext";
+import { cartContext } from "../context/CartContext";
 
 
     const Cart = () => {
@@ -45,7 +45,9 @@ import { cartContext } from "./context/CartContext";
                                         <td colSpan="2">Total</td>
                                         <td className="align-middle"><p className="my-0 ">${products.reduce((acc, el) => acc + (el.qty * el.price), 0)}</p></td>
                                         <td></td>
+                                        <Link to="/CartFinish">
                                         <button className="btn btn-success">Finalizar compra</button>
+                                        </Link>
                                     </tr>
                                 </tfoot>
                             </table>
