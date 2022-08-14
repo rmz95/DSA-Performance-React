@@ -1,12 +1,22 @@
 import React, { useState } from "react";
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
-const ItemCount = ({ stock, initial = 1, onAdd }) => {
+const ItemCount = ({ stock, initial = 0, onAdd }) => {
+
+    const MySwal = withReactContent(Swal);
 
     const [contador, setContador] = useState(initial)
 
     const suma = () => {
         contador < stock && setContador(contador + 1)
-        contador >= stock && alert('No hay stock para este producto o servicio')
+        contador >= stock &&  MySwal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'No hay stock para este producto o servicio',
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
 
     const resta = () => {

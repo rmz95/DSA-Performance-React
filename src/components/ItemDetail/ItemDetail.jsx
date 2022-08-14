@@ -9,23 +9,24 @@ const { addProduct } = useContext(cartContext);
 
 const onAdd = (contador) => {
     addProduct({...product, qty: contador});
-    console.log(`Se agregaran ${contador} productos al carrito`);
     setFinalized(true);
 };
 
 return (
     <div className="row gx-4 gx-lg-5 justify-content-center ms-0">
-    <div className="col-lg-8 col-xl-6 text-center pt-4">
+    <div className="col-lg-8 col-xl-6 text-center pt-1">
+            <h1 className="mt-0">Tienda DSA</h1>
+            <hr className="divider"/>
         <img src={product.url} alt={product.name} />
-        <h1>{product.name}</h1>
+        <h2>{product.name}</h2>
         <img src={product.url2} alt={product.name} className="img-fluid img-thumbnail"/>
-        <span className="fs-4 bold">${product.price}</span>
+        <p className="fs-4 bold">${product.price}</p>
         <p>{product.description}</p>
         {!finalized ? (
-        <ItemCount onAdd={onAdd} stock={product.stock} initial={1} />
+        <ItemCount onAdd={onAdd} stock={product.stock} initial={0} />
     ) : (
         <>
-            <div className="d-grid gap-2 d-md-flex justify-content-md-center">
+            <div className="d-grid gap-2 d-md-flex justify-content-md-center py-3">
                 <Link to="/cart" className="">
                     <button className="btn btn-success">Finalizar compra</button>
                 </Link>

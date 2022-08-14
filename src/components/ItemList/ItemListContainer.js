@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getDocs, collection, query, where } from "firebase/firestore";
+import { getDocs, collection, query, where, orderBy } from "firebase/firestore";
 import  ItemList from './ItemList';
 import { useParams } from "react-router-dom";
 import  BarLoader  from "react-spinners/BarLoader";
@@ -11,14 +11,13 @@ const ItemListContainer = ({ greeting }) => {
     const [loading, setLoading] = useState(true);
 
     const { type } = useParams();
-    console.log(type)
 
         useEffect(() => {
             
             const q = type
             ? query(collection(db, 'productos'), where('type', '==', type))
-            : collection(db, 'productos');
-            
+            : query(collection(db, 'productos'), orderBy('type', 'asc'));
+
         getDocs(q)
             .then(result => {
                 const list = result.docs.map(doc => {
@@ -36,15 +35,15 @@ const ItemListContainer = ({ greeting }) => {
     return(
         <>
         <div className="row gx-4 gx-lg-5 justify-content-center ms-0">
-        <div className="col-lg-8 col-xl-6 text-center">
-            <h1 className="mt-0">Tienda DSA</h1>
-            <hr className="divider"/>
-            <p className="text-muted mb-5">En esta seccion podrás comprar nuestros productos y servicios. Los precios de nuestros productos ya tienen incorporados la mano de obra.</p>
+            <div className="col-lg-8 col-xl-6 text-center">
+                <h1 className="mt-0">Tienda DSA</h1>
+                <hr className="divider"/>
+                <p className="text-muted mb-5">En esta seccion podrás comprar nuestros productos y servicios. Los precios de nuestros productos ya tienen incorporados la mano de obra.</p>
+            </div>
         </div>
-    </div>
         {loading ? (
-            <div className="text-center">
-                <BarLoader color={"#ee1d23"} loading={loading} size={150} />
+            <div className="d-flex justify-content-center align-items-center py-3">
+                <BarLoader color={"#ee1d23"} loading={loading} size={150} width={'40%'} />
             </div>
         ) : (
         <div className="row my-1">

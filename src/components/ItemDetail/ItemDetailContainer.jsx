@@ -32,8 +32,8 @@ const { id } = useParams();
     return(
         <>
         {loading ? (
-            <div>
-                <BarLoader color={"#ee1d23"} loading={loading} size={150} />
+            <div className='d-flex justify-content-center align-items-center py-3'>
+                <BarLoader color={"#ee1d23"} loading={loading} size={150} width={'40%'}/>
             </div>
         ): error ? (
             <h2>Lo sentimos, hubo un error</h2>

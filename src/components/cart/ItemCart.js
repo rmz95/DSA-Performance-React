@@ -6,7 +6,7 @@ const ItemCart = ({product}) => {
     const { deleteProduct } = useContext(cartContext)
 
     return (
-        <tr>
+        <tr className="py-2 my-2">
             <td>{product.id}</td>
             <td>{product.name}</td>
             <td>${product.price}</td>

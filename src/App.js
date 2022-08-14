@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import './styles.css';
+import Footer from "./components/Footer";
 import Navbar from "./components/NavBar";
 import ItemListContainer  from './components/ItemList/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
@@ -27,6 +28,7 @@ const App = () => {
             <Route path="/CartFinish" element={<CartFinish/>}/>
           </Routes>
       </CartCustomProvider>
+      <Footer />
     </BrowserRouter>
     
   );

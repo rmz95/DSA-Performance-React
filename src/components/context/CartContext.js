@@ -6,6 +6,7 @@ const { Provider } = cartContext;
 const CartCustomProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
     const [qtyProducts, setQtyProducts] = useState(0);
+    const [total, setTotal] = useState(0);
 
     const getProductsqty = () => {
         let qty = 0;
@@ -18,6 +19,7 @@ const CartCustomProvider = ({ children }) => {
 
     useEffect(() => {
         getProductsqty();
+        setTotal(totalProduct());
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [products]);
 
@@ -33,6 +35,9 @@ const CartCustomProvider = ({ children }) => {
         };
     }
 
+    function totalProduct(){
+        return products.reduce((acc, el) => acc + (el.qty * el.price), 0);
+    }
 
     const deleteProduct = (id) => {
         setProducts(products.filter(product => product.id !== id));
@@ -48,7 +53,7 @@ const CartCustomProvider = ({ children }) => {
     }
 
     return (
-        <Provider value= {{ products, addProduct, qtyProducts, deleteProduct, clear}}>
+        <Provider value= {{ products, addProduct, qtyProducts, deleteProduct, clear, total}}>
             {children}
         </Provider>
     );
