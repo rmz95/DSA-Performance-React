@@ -24,10 +24,9 @@ const { id } = useParams();
             ...result.data(),
         })
     })
-    .catch(err => console.log(err))
+    .catch(err => setError(err))
     .finally(() => setLoading(false))
     }, [id]);
-    console.log(product)
     
     return(
         <>

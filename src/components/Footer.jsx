@@ -6,7 +6,7 @@ import facebook from '../assets/icons/facebook.png';
 const Footer = () => {
 
     return(
-        <footer className='d-block'>
+        <footer>
             <div className="container px-4 px-lg-5 pt-4">
                 <p className="m-0 text-center footer__by2 fw-bold">Copyright &copy; DSA PEFORMANCE - 2022</p>
             </div>
