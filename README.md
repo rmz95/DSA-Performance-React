@@ -18,7 +18,8 @@ __
 _Esto se ha construido con las siguientes herramientas_
 
 * [React] - 
-* [Bootstrap] - 
+* [Bootstrap] -
+* [SweetAlert] -
 * [JavaScript] -
 
 ## Autores ✒️

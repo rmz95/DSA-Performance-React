@@ -8,19 +8,20 @@ const CartCustomProvider = ({ children }) => {
     const [qtyProducts, setQtyProducts] = useState(0);
     const [total, setTotal] = useState(0);
 
-    const getProductsqty = () => {
-        let qty = 0;
-        products.forEach(product => {
-            qty += product.qty;
-        })
-        setQtyProducts(qty);
-        
-    }
-
     useEffect(() => {
+        const getProductsqty = () => {
+            let qty = 0;
+            products.forEach(product => {
+                qty += product.qty;
+            })
+            setQtyProducts(qty);
+            
+        }
+        function totalProduct(){
+            return products.reduce((acc, el) => acc + (el.qty * el.price), 0);
+        }
         getProductsqty();
         setTotal(totalProduct());
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [products]);
 
     function addProduct(product) {
@@ -33,10 +34,6 @@ const CartCustomProvider = ({ children }) => {
         } else {
             setProducts([...products,{...product}]);
         };
-    }
-
-    function totalProduct(){
-        return products.reduce((acc, el) => acc + (el.qty * el.price), 0);
     }
 
     const deleteProduct = (id) => {
